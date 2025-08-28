@@ -1,0 +1,1083 @@
+
+(object Petal
+    version    	42
+    _written   	"Rose 4.5.8054a"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"640818AB008F"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"640818AB0091"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"640818AB00CF"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"640818AB0090"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"640818AB0092"
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @1
+		logical_models 	(list unit_reference_list
+		    (object Object "Sender"
+			quid       	"640818B802AC"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"640818DD0317"
+				supplier   	"Application"
+				quidu      	"640818D00159"
+				messages   	(list Messages
+				    (object Message "register"
+					quid       	"640818DD0320"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	0)
+				    (object Message "login"
+					quid       	"6408190603C4"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	5)))
+			    (object Link
+				quid       	"6408195A02F1"
+				supplier   	"Cloud"
+				quidu      	"640818CD0189"
+				messages   	(list Messages
+				    (object Message "encodeToDNAAndSend"
+					quid       	"6408195A02F2"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	6)))
+			    (object Link
+				quid       	"640819F4024E"
+				supplier   	"Sender"
+				quidu      	"640818B802AC"
+				messages   	(list Messages
+				    (object Message "logout"
+					quid       	"640819F4024F"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	14))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Reciever"
+			quid       	"640818BF02CB"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"640818E700E6"
+				supplier   	"Application"
+				quidu      	"640818D00159"
+				messages   	(list Messages
+				    (object Message "register"
+					quid       	"640818E700E7"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	1)
+				    (object Message "login"
+					quid       	"6408193203DA"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	7)
+				    (object Message "verifykey"
+					quid       	"6408199202A0"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	8)))
+			    (object Link
+				quid       	"640819EF0020"
+				supplier   	"Reciever"
+				quidu      	"640818BF02CB"
+				messages   	(list Messages
+				    (object Message "logout"
+					quid       	"640819EF0021"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	15))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Admin"
+			quid       	"640818C90278"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"640818F602BF"
+				supplier   	"Reciever"
+				quidu      	"640818BF02CB"
+				messages   	(list Messages
+				    (object Message "authorize"
+					quid       	"640818F602C0"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	3)))
+			    (object Link
+				quid       	"640818FD0291"
+				supplier   	"Sender"
+				quidu      	"640818B802AC"
+				messages   	(list Messages
+				    (object Message "authorize"
+					quid       	"640818FD0292"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	4)))
+			    (object Link
+				quid       	"640818EE0303"
+				supplier   	"Application"
+				quidu      	"640818D00159"
+				messages   	(list Messages
+				    (object Message "login"
+					quid       	"640818EE0304"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	2)))
+			    (object Link
+				quid       	"640819EB031E"
+				supplier   	"Admin"
+				quidu      	"640818C90278"
+				messages   	(list Messages
+				    (object Message "logout"
+					quid       	"640819EB031F"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	17))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Cloud"
+			quid       	"640818CD0189"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"640819740030"
+				supplier   	"Reciever"
+				quidu      	"640818BF02CB"
+				messages   	(list Messages
+				    (object Message "decodeMessage&Read"
+					quid       	"640819A0033B"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	9)))
+			    (object Link
+				quid       	"640819AE0273"
+				supplier   	"Application"
+				quidu      	"640818D00159"
+				messages   	(list Messages
+				    (object Message "login"
+					quid       	"640819AE0274"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	10)
+				    (object Message "viewMesssageToASCII"
+					quid       	"640819B503CD"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	11)
+				    (object Message "viewASCIIToHexa"
+					quid       	"640819C0018E"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	12)
+				    (object Message "viewHexaToBinary"
+					quid       	"640819CB0294"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	13)
+				    (object Message "viewBinaryToDNA"
+					quid       	"640819D90180"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	16)))
+			    (object Link
+				quid       	"640819E50031"
+				supplier   	"Cloud"
+				quidu      	"640818CD0189"
+				messages   	(list Messages
+				    (object Message "logout"
+					quid       	"640819E50032"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	18))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Application"
+			quid       	"640818D00159"
+			persistence 	"Transient"
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"640818AB0096"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "sequence"
+		mechanism_ref 	@1
+		quid       	"640818B400D4"
+		title      	"sequence"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	893
+		items      	(list diagram_item_list
+		    (object InterObjView "Sender" @2
+			location   	(448, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(448, 224)
+			    fill_color 	12058623
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Sender")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"640818B802AC"
+			width      	300
+			height     	2849
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @3
+			    location   	(448, 384)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(448, 912)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(448, 1088)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @6
+			    location   	(448, 1248)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @7
+			    location   	(448, 2368)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	152
+			    y_coord    	92
+			    Nested     	FALSE))
+		    (object InterObjView "Reciever" @8
+			location   	(1152, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(1152, 224)
+			    fill_color 	12058623
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Reciever")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"640818BF02CB"
+			width      	300
+			height     	2849
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(1152, 496)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(1152, 768)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @11
+			    location   	(1152, 1376)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @12
+			    location   	(1152, 1520)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @13
+			    location   	(1152, 1680)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @14
+			    location   	(1152, 2400)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	248
+			    y_coord    	188
+			    Nested     	FALSE))
+		    (object InterObjView "Admin" @15
+			location   	(1824, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@15
+			    location   	(1824, 224)
+			    fill_color 	12058623
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Admin")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"640818C90278"
+			width      	300
+			height     	2849
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @16
+			    location   	(1824, 608)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @17
+			    location   	(1824, 768)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @18
+			    location   	(1824, 912)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @19
+			    location   	(1824, 2640)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	152
+			    y_coord    	92
+			    Nested     	FALSE))
+		    (object InterObjView "Cloud" @20
+			location   	(2480, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@20
+			    location   	(2480, 224)
+			    fill_color 	12058623
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Cloud")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"640818CD0189"
+			width      	300
+			height     	2849
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @21
+			    location   	(2480, 1248)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @22
+			    location   	(2480, 1680)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @23
+			    location   	(2480, 1840)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @24
+			    location   	(2480, 2016)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @25
+			    location   	(2480, 2176)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @26
+			    location   	(2480, 2336)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @27
+			    location   	(2480, 2656)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @28
+			    location   	(2480, 2832)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	152
+			    y_coord    	92
+			    Nested     	FALSE))
+		    (object InterMessView "" @29
+			location   	(0, 768)
+			label      	(object SegLabel @30
+			    Parent_View 	@29
+			    location   	(1488, 724)
+			    quidu      	"640818F602C0"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	159
+			    justify    	0
+			    label      	"authorize"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@8
+			Focus_Src  	@17
+			Focus_Entry 	@10
+			origin     	(1808, 768)
+			terminus   	(1168, 768)
+			ordinal    	3)
+		    (object InterMessView "" @31
+			location   	(0, 912)
+			label      	(object SegLabel @32
+			    Parent_View 	@31
+			    location   	(835, 870)
+			    quidu      	"640818FD0292"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	159
+			    justify    	0
+			    label      	"authorize"
+			    pctDist    	0.724702
+			    height     	43
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@2
+			Focus_Src  	@18
+			Focus_Entry 	@4
+			origin     	(1808, 912)
+			terminus   	(464, 912)
+			ordinal    	4)
+		    (object InterObjView "Application" @33
+			location   	(3120, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@33
+			    location   	(3120, 224)
+			    fill_color 	12058623
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Application")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"640818D00159"
+			width      	300
+			height     	2849
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @34
+			    location   	(2816, 384)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @35
+			    location   	(2816, 496)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @36
+			    location   	(2816, 608)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @37
+			    location   	(2816, 1088)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @38
+			    location   	(2816, 1376)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @39
+			    location   	(3120, 1520)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @40
+			    location   	(3120, 1840)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @41
+			    location   	(3120, 2016)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @42
+			    location   	(3120, 2176)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @43
+			    location   	(3120, 2336)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @44
+			    location   	(3120, 2656)
+			    line_color 	3342489
+			    InterObjView 	@33
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterMessView "" @45
+			location   	(0, 384)
+			label      	(object SegLabel @46
+			    Parent_View 	@45
+			    location   	(752, 342)
+			    quidu      	"640818DD0320"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	128
+			    justify    	0
+			    label      	"register"
+			    pctDist    	0.109098
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@33
+			Focus_Src  	@3
+			Focus_Entry 	@34
+			origin     	(464, 384)
+			terminus   	(3104, 384)
+			ordinal    	0)
+		    (object InterMessView "" @47
+			location   	(0, 496)
+			label      	(object SegLabel @48
+			    Parent_View 	@47
+			    location   	(1485, 454)
+			    quidu      	"640818E700E7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	128
+			    justify    	0
+			    label      	"register"
+			    pctDist    	0.164000
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@33
+			Focus_Src  	@9
+			Focus_Entry 	@35
+			origin     	(1168, 496)
+			terminus   	(3104, 496)
+			ordinal    	1)
+		    (object InterMessView "" @49
+			location   	(0, 608)
+			label      	(object SegLabel @50
+			    Parent_View 	@49
+			    location   	(2061, 551)
+			    quidu      	"640818EE0304"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	81
+			    justify    	0
+			    label      	"login"
+			    pctDist    	0.175452
+			    height     	58
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@33
+			Focus_Src  	@16
+			Focus_Entry 	@36
+			origin     	(1840, 608)
+			terminus   	(3104, 608)
+			ordinal    	2)
+		    (object InterMessView "" @51
+			location   	(0, 1088)
+			label      	(object SegLabel @52
+			    Parent_View 	@51
+			    location   	(817, 1045)
+			    quidu      	"6408190603C4"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	81
+			    justify    	0
+			    label      	"login"
+			    pctDist    	0.133876
+			    height     	44
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@33
+			Focus_Src  	@5
+			Focus_Entry 	@37
+			origin     	(464, 1088)
+			terminus   	(3104, 1088)
+			ordinal    	5)
+		    (object InterMessView "" @53
+			location   	(0, 1376)
+			label      	(object SegLabel @54
+			    Parent_View 	@53
+			    location   	(1514, 1334)
+			    quidu      	"6408193203DA"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	81
+			    justify    	0
+			    label      	"login"
+			    pctDist    	0.179000
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@33
+			Focus_Src  	@11
+			Focus_Entry 	@38
+			origin     	(1168, 1376)
+			terminus   	(3104, 1376)
+			ordinal    	7)
+		    (object InterMessView "" @55
+			location   	(0, 1248)
+			label      	(object SegLabel @56
+			    Parent_View 	@55
+			    location   	(792, 1220)
+			    quidu      	"6408195A02F2"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	410
+			    justify    	0
+			    label      	"encodeToDNAAndSend"
+			    pctDist    	0.164500
+			    height     	29
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@20
+			Focus_Src  	@6
+			Focus_Entry 	@21
+			origin     	(464, 1248)
+			terminus   	(2464, 1248)
+			ordinal    	6)
+		    (object InterMessView "" @57
+			location   	(0, 1520)
+			label      	(object SegLabel @58
+			    Parent_View 	@57
+			    location   	(1447, 1476)
+			    quidu      	"6408199202A0"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	150
+			    justify    	0
+			    label      	"verifykey"
+			    pctDist    	0.144628
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@33
+			Focus_Src  	@12
+			Focus_Entry 	@39
+			origin     	(1168, 1520)
+			terminus   	(3104, 1520)
+			ordinal    	8)
+		    (object InterMessView "" @59
+			location   	(0, 1680)
+			label      	(object SegLabel @60
+			    Parent_View 	@59
+			    location   	(1495, 1623)
+			    quidu      	"640819A0033B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	407
+			    justify    	0
+			    label      	"decodeMessage&Read"
+			    pctDist    	0.747685
+			    height     	58
+			    orientation 	1)
+			line_color 	3342489
+			client     	@20
+			supplier   	@8
+			Focus_Src  	@22
+			Focus_Entry 	@13
+			origin     	(2464, 1680)
+			terminus   	(1168, 1680)
+			ordinal    	9)
+		    (object InterMessView "" @61
+			location   	(0, 1840)
+			label      	(object SegLabel @62
+			    Parent_View 	@61
+			    location   	(2800, 1796)
+			    quidu      	"640819AE0274"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	81
+			    justify    	0
+			    label      	"login"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@33
+			Focus_Src  	@23
+			Focus_Entry 	@40
+			origin     	(2496, 1840)
+			terminus   	(3104, 1840)
+			ordinal    	10)
+		    (object InterMessView "" @63
+			location   	(0, 2016)
+			label      	(object SegLabel @64
+			    Parent_View 	@63
+			    location   	(2800, 1972)
+			    quidu      	"640819B503CD"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	394
+			    justify    	0
+			    label      	"viewMesssageToASCII"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@33
+			Focus_Src  	@24
+			Focus_Entry 	@41
+			origin     	(2496, 2016)
+			terminus   	(3104, 2016)
+			ordinal    	11)
+		    (object InterMessView "" @65
+			location   	(0, 2176)
+			label      	(object SegLabel @66
+			    Parent_View 	@65
+			    location   	(2800, 2132)
+			    quidu      	"640819C0018E"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	303
+			    justify    	0
+			    label      	"viewASCIIToHexa"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@33
+			Focus_Src  	@25
+			Focus_Entry 	@42
+			origin     	(2496, 2176)
+			terminus   	(3104, 2176)
+			ordinal    	12)
+		    (object InterMessView "" @67
+			location   	(0, 2336)
+			label      	(object SegLabel @68
+			    Parent_View 	@67
+			    location   	(2800, 2292)
+			    quidu      	"640819CB0294"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	316
+			    justify    	0
+			    label      	"viewHexaToBinary"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@33
+			Focus_Src  	@26
+			Focus_Entry 	@43
+			origin     	(2496, 2336)
+			terminus   	(3104, 2336)
+			ordinal    	13)
+		    (object InterMessView "" @69
+			location   	(0, 2656)
+			label      	(object SegLabel @70
+			    Parent_View 	@69
+			    location   	(2800, 2612)
+			    quidu      	"640819D90180"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	306
+			    justify    	0
+			    label      	"viewBinaryToDNA"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@33
+			Focus_Src  	@27
+			Focus_Entry 	@44
+			origin     	(2496, 2656)
+			terminus   	(3104, 2656)
+			ordinal    	16)
+		    (object SelfMessView "" @71
+			location   	(0, 2864)
+			label      	(object SegLabel @72
+			    Parent_View 	@71
+			    location   	(2571, 2820)
+			    quidu      	"640819E50032"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	106
+			    justify    	0
+			    label      	"logout"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@20
+			supplier   	@20
+			Focus_Src  	@28
+			origin     	(2496, 2864)
+			terminus   	(2646, 2864)
+			ordinal    	18)
+		    (object SelfMessView "" @73
+			location   	(0, 2672)
+			label      	(object SegLabel @74
+			    Parent_View 	@73
+			    location   	(1915, 2628)
+			    quidu      	"640819EB031F"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	106
+			    justify    	0
+			    label      	"logout"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@19
+			origin     	(1840, 2672)
+			terminus   	(1990, 2672)
+			ordinal    	17)
+		    (object SelfMessView "" @75
+			location   	(0, 2528)
+			label      	(object SegLabel @76
+			    Parent_View 	@75
+			    location   	(1243, 2484)
+			    quidu      	"640819EF0021"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	106
+			    justify    	0
+			    label      	"logout"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@8
+			Focus_Src  	@14
+			origin     	(1168, 2528)
+			terminus   	(1318, 2528)
+			ordinal    	15)
+		    (object SelfMessView "" @77
+			location   	(0, 2400)
+			label      	(object SegLabel @78
+			    Parent_View 	@77
+			    location   	(539, 2356)
+			    quidu      	"640819F4024F"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	106
+			    justify    	0
+			    label      	"logout"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@2
+			Focus_Src  	@7
+			origin     	(464, 2400)
+			terminus   	(614, 2400)
+			ordinal    	14)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"640818AB0092"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"640818AB00CE"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"640818AB0093"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"640818AB0095"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"640818AB0094"))
